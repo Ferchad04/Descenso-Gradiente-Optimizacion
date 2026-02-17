@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import random as rn
 
 # Clase abstracta para funciones objetivo
 class Funcion:
@@ -119,12 +119,13 @@ class DescensoGradiente:
 def main():
     print("Esfera")
     f = Esfera()
-    gd = DescensoGradiente(f, tam_paso=0.05, max_iter=1000)
+    gd = DescensoGradiente(f, tam_paso=0.1, max_iter=1000)
     gd.solve([4.0, 3.0])
     gd.plot2d(-5, 5)
 
     print("\nRosenbrock")
     f = Rosenbrock()
+
     gd = DescensoGradiente(f, tam_paso=0.0015, max_iter=5000)
     gd.solve([-1.5, 2.0])
     gd.plot2d(-2, 3)
